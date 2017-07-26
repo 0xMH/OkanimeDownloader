@@ -78,11 +78,22 @@ choose the format you prefer then put Its format code after `-format` arguments
 
 `$ python3 Oknime.py http://okanime.com/animes/one-piece/episodes/one-piece-797 --format 0`
 
-***downloading a punch of episode of the same anime with a single line is also supported***
+***downloading a punch of episode of the same anime with a single line is also supported:***
 
 `$ python3 Oknime.py http://okanime.com/animes/one-piece/episodes/one-piece-790 --playlist-end 797`
 
 this will download from EP 790 to 797
+
+## TO-DO:
+
+I'm not sure I'll be able to make these things, so If you're intersted just dive in.
+
+- [ ] Progress bar (by capturing and parsing the [output of youtube-dl](https://github.com/rg3/youtube-dl#embedding-youtube-dl) then using [tqdm](https://github.com/tqdm/tqdm))
+
+- [ ] Async downloading (using [asyncio](https://docs.python.org/3/library/asyncio.html) or something that would make it possible to download a punch of episode at the same time)
+
+- [ ] Download meta-data (from: AniDB.net, TheTVDB.com, TheMovieDB.org...etc)
+- [ ] Support downloading movies from okanime
 
 ### Disclaimer: 
 
