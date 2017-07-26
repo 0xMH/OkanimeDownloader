@@ -50,11 +50,11 @@ Video Selection:
 ```
 
 ### Examples:
-`$ python3 okanime.py http://okanime.com/animes/one-piece/episodes/one-piece-797`
+1. `$ python3 okanime.py http://okanime.com/animes/one-piece/episodes/one-piece-797`
 
 as simple as that, you will get the hightest quality possible from this Episode in you Disk!
 
-but, what if you want a specific Format?
+***what if you want a specific Format?***
 
 **first:**
 
@@ -77,6 +77,12 @@ format code  extension  resolution note
 choose the format you prefer then put Its format code after `-format` arguments
 
 `$ python3 Oknime.py http://okanime.com/animes/one-piece/episodes/one-piece-797 --format 0`
+
+***downloading a punch of episode of the same anime with a single line is also supported***
+
+`$ python3 Oknime.py http://okanime.com/animes/one-piece/episodes/one-piece-790 --playlist-end 797`
+
+this will download from EP 790 to 797
 
 ### Disclaimer: 
 
