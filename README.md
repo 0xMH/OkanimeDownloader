@@ -17,9 +17,9 @@ This project still in Beta Release, It lacks a lot of features and possible cont
 First, make sure you have [Python 3.x](https://www.python.org/downloads/), [pip](https://pip.pypa.io/en/stable/installing/), and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your machine.
 Run the following in your command prompt to install:
 
-1. Clone the repo 
-2. Run `pip install -r requirements.txt`
-3. Run `python3 okanime.py`
+1. `git clone https://github.com/MoHD20/OkanimeDownloader.git`
+2. `cd OkanimeDownloader` 
+2. `pip install -r requirements.txt`
 
 ## Usage
 ```
