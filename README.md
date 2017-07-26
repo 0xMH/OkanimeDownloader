@@ -6,7 +6,7 @@
 Scrape your favorite Anime from [Okanime](http://okanime.com/) with no effort. OkanimeDownloader is kind of a wrapper around youtube-dl to make it able to donwload from [Okanime](http://okanime.com/).
 
 I made it to look & feel exactly like youtube-dl, so if you're a fan of youtube-dl, this simple project is made for you! 
-This project still in Beta Release, It lacks a lot of features and possible contains some bugs too, but for now It's "just work"
+This project still in Beta Release, It lacks a lot of features and possibly contains some bugs too, but for now It's "just work"
 
 ## Requirements
 * [Python 3.x](https://www.python.org/downloads/)
