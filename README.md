@@ -86,7 +86,7 @@ this will download from EP 790 to 797
 
 ## TO-DO:
 
-I'm not sure I'll be able to make these things, so If you're intersted just dive in.
+I'm not sure I'll be able to make these things, so If you're interested just dive in.
 
 - [ ] Progress bar (by capturing and parsing the [output of youtube-dl](https://github.com/rg3/youtube-dl#embedding-youtube-dl) then using [tqdm](https://github.com/tqdm/tqdm))
 
