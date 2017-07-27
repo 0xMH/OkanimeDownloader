@@ -62,8 +62,8 @@ def get_Durl(general, args=None):
     """
     Determine the exact URL of the video to download
     """
-    ### regex for supported downloading websites
-    google_regex  = r'https?://(?:video\.google\.com/get_player\?.*?docid=|(?:docs|drive)\.google\.com/file/d/)([a-zA-Z0-9_-]{28,})'
+    # regex for supported downloading websites
+    google_regex = r'https?://(?:video\.google\.com/get_player\?.*?docid=|(?:docs|drive)\.google\.com/file/d/)([a-zA-Z0-9_-]{28,})'
     okanime_regex = r'https?://(?:cdn\d.okanime.com/v/)(?:[a-zA-Z0-9_-]){14,}'
     dailymo_regex = r'https?://(?:www.dailymotion.com/embed/video/)(?:[a-zA-Z0-9_-]){7,}'
     streama_regex = r'https?://(?:www)?streamango.com/embed(?:/embed)?/[a-zA-Z0-9_-]{16,}.*'
@@ -84,7 +84,8 @@ def get_Durl(general, args=None):
     for key in dic.keys():
         temp = json.loads(requests.get(dic[key]).text)
         dic[key] = temp.get('url')
-        logging.debug('found a punch of urls to download from: {} '.format(dic))
+        logging.debug(
+            'found a punch of urls to download from: {} '.format(dic))
         if any(re.match(regex, dic[key]) for regex
                in [google_regex, okanime_regex, dailymo_regex, streama_regex, tune_pk_regex, rapidvi_regex]):
             logging.info('Found a video url {}'.format(dic[key]))
@@ -97,7 +98,6 @@ def get_Durl(general, args=None):
                 continue
 
 
-
 def my_hook(d):
     """
     funcetion for the post procedures that happen to the downloaded files after youtube-dl done its magic (ie. renaming)
@@ -108,9 +108,9 @@ def my_hook(d):
         print('Done downloading, now renaming & moving ...')
         filename, extension = os.path.splitext(d['filename'])
         dirname = os.path.dirname(os.path.abspath(__file__))
-        os.rename(os.path.join(dirname, d['filename']), os.path.join(dirname, anime_name + ' ' + episode.lstrip('0') + extension)) #/Users/hamza/Dropbox/My Py Projects/Okanime/[OKanime.com] OxP  (004).mkv-0ByGlIFp6qxNYSFZvLWQxR1RDd0k.mp4
-
-
+        # /Users/hamza/Dropbox/My Py Projects/Okanime/[OKanime.com] OxP  (004).mkv-0ByGlIFp6qxNYSFZvLWQxR1RDd0k.mp4
+        os.rename(os.path.join(dirname, d['filename']), os.path.join(
+            dirname, anime_name + ' ' + episode.lstrip('0') + extension))
 
 
 def download(links, args=None):
@@ -150,7 +150,8 @@ def next_episode(url):
 
     episode, anime_name = current_anime_eps(url)
     episode = int(episode) + 1
-    args.URL = 'http://okanime.com/animes/{}/episodes/{}-{numb:0=3d}'.format(anime_name, anime_name, numb=episode)
+    args.URL = 'http://okanime.com/animes/{}/episodes/{}-{numb:0=3d}'.format(
+        anime_name, anime_name, numb=episode)
     logging.DEBUG('next episode URL:  {}'.format(args.URL))
     return get_Durl(args.URL)
 
@@ -159,13 +160,14 @@ def main():
 
     episode, name = current_anime_eps(args.URL)
     if len(args.URL) != 1:
-        logging.critical('please enter just one url to download. you entered {} which are: {}'.format(len(args.URL), args.URL))
+        logging.critical('please enter just one url to download. you entered {} which are: {}'.format(
+            len(args.URL), args.URL))
         sys.exit()
 
     if args.playlistend:
         get_Durl(args.URL)
 
-        for _ in range(int(episode), int(args.playlistend)+1):
+        for _ in range(int(episode), int(args.playlistend) + 1):
             next_episode(args.URL)
 
     elif args.listformats:
@@ -180,17 +182,3 @@ def main():
 
 if '__name__' == main():
     main()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
