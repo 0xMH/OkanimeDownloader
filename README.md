@@ -3,10 +3,9 @@
 ![download](https://user-images.githubusercontent.com/12420351/28639919-96da7642-7252-11e7-90e5-9a52fbb10c82.png)
 
 
-Scrape your favorite Anime from [Okanime](http://okanime.com/) with no effort. OkanimeDownloader is kind of a wrapper around youtube-dl to make it able to donwload from [Okanime](http://okanime.com/).
+Scrape your favorite anime from [Okanime](http://okanime.com/) without any effort. OkanimeDownloader is a wrapper around youtube-dl to download anime from [Okanime](http://okanime.com/).
 
-I made it to look & feel exactly like youtube-dl, so if you're a fan of youtube-dl, this simple project is made for you! 
-This project still in Beta Release, It lacks a lot of features and possibly contains some bugs too, but for now It's "just work"
+I made it to look & feel exactly like youtube-dl, so if you're a fan of youtube-dl, this simple project is made for you! This project still in beta. It lacks a lot of features and might contains some bugs as well. But for now, it "just works".
 
 ## Requirements
 * [Python 3.x](https://www.python.org/downloads/)
@@ -15,18 +14,16 @@ This project still in Beta Release, It lacks a lot of features and possibly cont
 
 ## Installation
 First, make sure you have [Python 3.x](https://www.python.org/downloads/), [pip](https://pip.pypa.io/en/stable/installing/), and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your machine.
-Run the following in your command prompt to install:
 
+Run the following in your command prompt to install:
 1. `git clone https://github.com/MoHD20/OkanimeDownloader.git`
 2. `cd OkanimeDownloader` 
-2. `pip install -r requirements.txt`
+3. `pip install -r requirements.txt`
 
 ## Usage
 ```
 usage: Oknime.py [-h] [--version] [-F] [-f FORMAT] [--playlist-end NUMBER]
                  URL [URL ...]
-
-Download from Okanime.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -40,8 +37,7 @@ Video Format Options:
 
 Video Format Options:
   -f FORMAT, --format FORMAT
-                        Video format code, see the "FORMAT SELECTION" for all
-                        the info
+                        Video format code, see the "FORMAT SELECTION" for more info
 
 Video Selection:
   --playlist-end NUMBER
@@ -49,16 +45,21 @@ Video Selection:
 
 ```
 
-### Examples:
-1. `$ python3 okanime.py http://okanime.com/animes/one-piece/episodes/one-piece-797`
+## Examples:
 
-as simple as that, you will get the hightest quality possible from this Episode in you Disk!
+### 1. How to download one episode?
 
-***what if you want a specific Format?***
+```
+$ python3 okanime.py http://okanime.com/animes/one-piece/episodes/one-piece-797
+```
 
-**first:**
+As simple as that! This will download the highest quality video available for that episode.
 
-you should list available Formats
+### 2. How to download the video in a specific format?
+
+**Step 1:**
+
+List the available formats
 
 ```
 $ python3 Oknime.py http://okanime.com/animes/one-piece/episodes/one-piece-797 --list-formats
@@ -72,29 +73,29 @@ format code  extension  resolution note
 1            mp4        720p       (best)
 ```
 
-**second:**
+**Step 2:**
 
-choose the format you prefer then put Its format code after `-format` arguments
+Put the format code of your choice after the `-format` argument
 
 `$ python3 Oknime.py http://okanime.com/animes/one-piece/episodes/one-piece-797 --format 0`
 
-***downloading a punch of episode of the same anime with a single line is also supported:***
+### 3. How to download more than one episode?
 
 `$ python3 Oknime.py http://okanime.com/animes/one-piece/episodes/one-piece-790 --playlist-end 797`
 
-this will download from EP 790 to 797
+This will download episodes 790 to 797.
 
 ## TO-DO:
 
 I'm not sure I'll be able to make these things, so If you're interested just dive in.
 
-- [ ] Progress bar (by capturing and parsing the [output of youtube-dl](https://github.com/rg3/youtube-dl#embedding-youtube-dl) then using [tqdm](https://github.com/tqdm/tqdm))
+- [ ] Progress bar (By capturing and parsing the [output of youtube-dl](https://github.com/rg3/youtube-dl#embedding-youtube-dl) and using [tqdm](https://github.com/tqdm/tqdm))
 
 - [ ] Async downloading (using [asyncio](https://docs.python.org/3/library/asyncio.html) or something that would make it possible to download a punch of episode at the same time)
 
 - [ ] Download meta-data (from: AniDB.net, TheTVDB.com, TheMovieDB.org...etc)
-- [ ] Support downloading movies from okanime
+- [ ] Download movies from Okanime
 
 ### Disclaimer: 
 
-This project Isn't officialy connected to [Okanime](http://okanime.com/) by any mean. If you really love Anime and could get it legally, then you should do that! gotta support the industry you know.
+This project isn't officialy connected to [Okanime](http://okanime.com/) by any means. If you really love anime and could get it legally, then you should do that. Gotta support the industry! :heart:
