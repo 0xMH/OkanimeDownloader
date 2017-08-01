@@ -95,6 +95,7 @@ I'm not sure I'll be able to make these things, so If you're interested just div
 
 - [ ] Download meta-data (from: AniDB.net, TheTVDB.com, TheMovieDB.org...etc)
 - [ ] Download movies from Okanime
+- [ ] Make it installable via PyPI(ie. pip install okanimedownloader)
 
 ### Disclaimer: 
 
